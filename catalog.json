@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "brands": [
+    {
+      "id": "bambu-lab",
+      "name": "Bambu Lab",
+      "products": [
+        {"id":"pla-basic","family":"PLA","name":"PLA Basic","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"},{"name":"Green","hex":"#2E7D32"},{"name":"Yellow","hex":"#F9A825"}]},
+        {"id":"pla-matte","family":"PLA","name":"PLA Matte","spoolSizes":[1000],"colors":[{"name":"Charcoal","hex":"#424242"},{"name":"Ivory White","hex":"#F3EDE2"},{"name":"Marine Blue","hex":"#32577A"},{"name":"Grass Green","hex":"#557A46"}]},
+        {"id":"pla-tough-plus","family":"PLA","name":"PLA Tough+","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#B71C1C"},{"name":"Blue","hex":"#1E4F91"}]},
+        {"id":"petg-hf","family":"PETG","name":"PETG HF","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#101010"},{"name":"White","hex":"#F4F4F4"},{"name":"Gray","hex":"#747474"},{"name":"Blue","hex":"#1F5A99"}]},
+        {"id":"tpu-95a-hf","family":"TPU","name":"TPU 95A HF","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F7F7F7"},{"name":"Gray","hex":"#737373"},{"name":"Red","hex":"#B3261E"}]}
+      ]
+    },
+    {
+      "id": "snapmaker",
+      "name": "Snapmaker",
+      "products": [
+        {"id":"snapspeed-pla","family":"PLA","name":"SnapSpeed PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Gray","hex":"#777777"},{"name":"Red","hex":"#C62828"}]}
+      ]
+    },
+    {
+      "id": "polymaker",
+      "name": "Polymaker",
+      "products": [
+        {"id":"polylite-pla","family":"PLA","name":"PolyLite PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Gray","hex":"#777777"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"}]},
+        {"id":"polyterra-pla","family":"PLA","name":"PolyTerra PLA","spoolSizes":[1000],"colors":[{"name":"Charcoal Black","hex":"#2B2B2B"},{"name":"Cotton White","hex":"#F1EEE8"},{"name":"Sapphire Blue","hex":"#315B8A"},{"name":"Army Red","hex":"#8D3A3A"}]}
+      ]
+    },
+    {
+      "id": "esun",
+      "name": "eSUN",
+      "products": [
+        {"id":"pla-plus","family":"PLA","name":"PLA+","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"Cold White","hex":"#F7F7F7"},{"name":"Fire Engine Red","hex":"#B52222"},{"name":"Peak Green","hex":"#2F7B55"},{"name":"Blue","hex":"#1B5F9E"}]},
+        {"id":"epla-matte","family":"PLA","name":"ePLA-Matte","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#202020"},{"name":"Milky White","hex":"#EFECE4"},{"name":"Deep Blue","hex":"#36587B"}]}
+      ]
+    },
+    {
+      "id": "sunlu",
+      "name": "SUNLU",
+      "products": [
+        {"id":"pla","family":"PLA","name":"PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"}]},
+        {"id":"petg","family":"PETG","name":"PETG","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Transparent","hex":"#D9E3E8"},{"name":"Gray","hex":"#777777"}]}
+      ]
+    },
+    {
+      "id": "overture",
+      "name": "Overture",
+      "products": [
+        {"id":"pla","family":"PLA","name":"PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Space Gray","hex":"#666B70"},{"name":"Digital Blue","hex":"#2067A8"}]},
+        {"id":"petg","family":"PETG","name":"PETG","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Transparent","hex":"#DDE8EC"},{"name":"Red","hex":"#B92F2F"}]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Filament Stock" />
+  <title>Filament Stock</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div><p class="eyebrow">3D PRINTING INVENTORY</p><h1>Filament Stock</h1></div>
+    <button id="addSpoolTop" class="icon-button" aria-label="Add spool">+</button>
+  </header>
+
+  <main>
+    <section id="dashboardView" class="view active">
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-label">Spools</span><strong id="statSpools">0</strong></article>
+        <article class="stat-card"><span class="stat-label">Filament</span><strong id="statKg">0.0 kg</strong></article>
+        <article class="stat-card"><span class="stat-label">Printers</span><strong id="statPrinters">0</strong></article>
+        <article class="stat-card warning"><span class="stat-label">Low Stock</span><strong id="statLow">0</strong></article>
+      </div>
+
+      <section class="panel">
+        <p class="eyebrow">AT A GLANCE</p><h2>Loaded on printers</h2>
+        <div id="dashboardPrinters" class="printer-list"></div>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">AT A GLANCE</p><h2>Low-stock spools</h2>
+        <div id="lowStockList" class="spool-list"></div>
+      </section>
+    </section>
+
+    <section id="inventoryView" class="view">
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Search brand, colour, material..." autocomplete="off" />
+        <select id="materialFilter"><option value="All">All materials</option></select>
+      </div>
+      <div class="inventory-header">
+        <span id="inventoryCount">0 spools</span>
+        <div class="small-actions">
+          <button id="exportBtn" class="secondary-button">Export</button>
+          <label class="secondary-button file-label">Import<input id="importInput" type="file" accept="application/json" hidden /></label>
+        </div>
+      </div>
+      <div id="inventoryList" class="spool-list"></div>
+    </section>
+
+    <section id="printersView" class="view">
+      <div class="inventory-header">
+        <div><p class="eyebrow">YOUR EQUIPMENT</p><h2 class="no-margin">Printers</h2></div>
+        <button id="addPrinterBtn" class="primary-button">+ Add Printer</button>
+      </div>
+      <p class="muted">Assign an inventory spool to each filament position to see exactly what is currently loaded.</p>
+      <div id="printerList" class="printer-list"></div>
+    </section>
+
+    <section id="settingsView" class="view">
+      <section class="panel">
+        <p class="eyebrow">FILAMENT CATALOGUE</p><h2>Built-in + your custom filaments</h2>
+        <p class="muted">The Add Spool screen uses Brand → Product → Colour dropdowns. Custom filaments can be saved back into your personal catalogue for next time.</p>
+        <p class="muted"><strong id="catalogueSummary">Loading catalogue…</strong></p>
+        <button id="clearCustomCatalogBtn" class="secondary-button">Clear custom catalogue entries</button>
+      </section>
+      <section class="panel">
+        <p class="eyebrow">BACKUP</p><h2>Keep a copy of your inventory</h2>
+        <p class="muted">Backups now include your spools, printers, loaded-slot assignments, and custom catalogue entries.</p>
+        <div class="stack-actions">
+          <button id="settingsExportBtn" class="primary-button">Export backup</button>
+          <label class="secondary-button file-label full-width">Import backup<input id="settingsImportInput" type="file" accept="application/json" hidden /></label>
+        </div>
+      </section>
+      <section class="panel"><p class="eyebrow">ABOUT</p><h2>Filament Stock</h2><p class="muted">Version 2.0 — inventory, printer loading, and smart filament catalogue.</p></section>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button data-view="dashboardView" class="nav-item active"><span>⌂</span><small>Dashboard</small></button>
+    <button data-view="inventoryView" class="nav-item"><span>▦</span><small>Inventory</small></button>
+    <button id="addSpoolBottom" class="nav-add" aria-label="Add spool">+</button>
+    <button data-view="printersView" class="nav-item"><span>▤</span><small>Printers</small></button>
+    <button data-view="settingsView" class="nav-item"><span>⚙︎</span><small>Settings</small></button>
+  </nav>
+</div>
+
+<dialog id="spoolDialog">
+  <form id="spoolForm" method="dialog">
+    <div class="dialog-header">
+      <div><p class="eyebrow" id="dialogEyebrow">NEW FILAMENT</p><h2 id="dialogTitle">Add Spool</h2></div>
+      <button type="button" id="closeDialog" class="icon-button subtle" aria-label="Close">×</button>
+    </div>
+    <input type="hidden" id="spoolId" />
+
+    <section class="form-section">
+      <label class="switch-row"><span>Use custom filament entry</span><input id="useCustomFilament" type="checkbox" /></label>
+
+      <div id="catalogFields">
+        <label>Brand<select id="brandSelect"></select></label>
+        <label>Product / material<select id="productSelect"></select></label>
+        <div class="two-col">
+          <label>Colour<select id="colorSelect"></select></label>
+          <label>Colour preview<input id="catalogColorPreview" type="color" disabled /></label>
+        </div>
+        <p id="materialFamilyHint" class="muted compact"></p>
+      </div>
+
+      <div id="customFields" class="hidden">
+        <label>Brand<input id="brandCustom" placeholder="e.g. Local manufacturer" /></label>
+        <div class="two-col">
+          <label>Material family<input id="familyCustom" placeholder="e.g. PLA" /></label>
+          <label>Product / material<input id="materialCustom" placeholder="e.g. Silk PLA" /></label>
+        </div>
+        <div class="two-col">
+          <label>Colour name<input id="colorNameCustom" placeholder="e.g. Copper" /></label>
+          <label>Colour<input id="colorHexCustom" type="color" value="#808080" /></label>
+        </div>
+        <label class="switch-row"><span>Save this combination to my catalogue</span><input id="saveToCatalog" type="checkbox" checked /></label>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <label>Original weight (g)<input id="initialWeight" type="number" min="1" step="1" value="1000" required /></label>
+      <label>Remaining (g)<input id="remainingWeight" type="number" min="0" step="1" value="1000" required /></label>
+    </div>
+    <div class="two-col">
+      <label>Empty spool weight (g)<input id="tareWeight" type="number" min="0" step="1" value="0" /></label>
+      <label>Low-stock warning (g)<input id="lowStockThreshold" type="number" min="0" step="1" value="150" /></label>
+    </div>
+    <label>Storage location<input id="location" placeholder="e.g. Shelf 2 / Bin A" /></label>
+    <label>Notes<textarea id="notes" rows="3" placeholder="Optional notes"></textarea></label>
+    <label class="switch-row"><span>Spool is open</span><input id="isOpen" type="checkbox" /></label>
+    <div class="dialog-actions">
+      <button type="button" id="deleteSpoolBtn" class="danger-button hidden">Delete</button><span class="grow"></span>
+      <button type="button" id="cancelSpoolBtn" class="secondary-button">Cancel</button><button type="submit" class="primary-button">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="printerDialog">
+  <form id="printerForm" method="dialog">
+    <div class="dialog-header">
+      <div><p class="eyebrow">PRINTER SETUP</p><h2 id="printerDialogTitle">Add Printer</h2></div>
+      <button type="button" id="closePrinterDialog" class="icon-button subtle" aria-label="Close">×</button>
+    </div>
+    <input type="hidden" id="printerId" />
+    <label>Quick setup<select id="printerPreset"><option value="custom">Custom printer</option><option value="snapmaker-u1">Snapmaker U1 — 4 toolheads</option><option value="single">Standard single-filament printer</option></select></label>
+    <label>Printer name<input id="printerName" required placeholder="e.g. Workshop U1" /></label>
+    <label>Model<input id="printerModel" required placeholder="e.g. Snapmaker U1" /></label>
+    <div class="two-col">
+      <label>Loading system<select id="printerSystem"><option value="single">Single filament</option><option value="ams">AMS / multi-spool</option><option value="toolchanger">Toolchanger</option><option value="other">Other multi-material</option></select></label>
+      <label>Filament positions<input id="printerSlotCount" type="number" min="1" max="16" value="1" required /></label>
+    </div>
+    <label>Notes<textarea id="printerNotes" rows="3" placeholder="Optional notes"></textarea></label>
+    <div class="dialog-actions">
+      <button type="button" id="deletePrinterBtn" class="danger-button hidden">Delete</button><span class="grow"></span>
+      <button type="button" id="cancelPrinterBtn" class="secondary-button">Cancel</button><button type="submit" class="primary-button">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="useDialog">
+  <form id="useForm" method="dialog">
+    <div class="dialog-header"><div><p class="eyebrow">FILAMENT USED</p><h2 id="useTitle">Record usage</h2></div><button type="button" id="closeUseDialog" class="icon-button subtle">×</button></div>
+    <input type="hidden" id="useSpoolId" />
+    <label>Grams used<input id="gramsUsed" type="number" min="0.1" step="0.1" required placeholder="e.g. 197.1" /></label>
+    <p id="useRemainingHint" class="muted"></p>
+    <div class="dialog-actions"><span class="grow"></span><button type="button" id="cancelUseBtn" class="secondary-button">Cancel</button><button type="submit" class="primary-button">Subtract</button></div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
