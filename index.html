@@ -79,7 +79,7 @@
           <label class="secondary-button file-label full-width">Import backup<input id="settingsImportInput" type="file" accept="application/json" hidden /></label>
         </div>
       </section>
-      <section class="panel"><p class="eyebrow">ABOUT</p><h2>Filament Stock</h2><p class="muted">Version 2.0 — inventory, printer loading, and smart filament catalogue.</p></section>
+      <section class="panel"><p class="eyebrow">ABOUT</p><h2>Filament Stock</h2><p class="muted">Version 3.0 — expanded filament catalogue, colour codes, live colour preview, and smart printer setup.</p></section>
     </section>
   </main>
 
@@ -106,9 +106,20 @@
       <div id="catalogFields">
         <label>Brand<select id="brandSelect"></select></label>
         <label>Product / material<select id="productSelect"></select></label>
-        <div class="two-col">
-          <label>Colour<select id="colorSelect"></select></label>
-          <label>Colour preview<input id="catalogColorPreview" type="color" disabled /></label>
+        <label>Colour
+          <div id="colorPicker" class="color-picker">
+            <button type="button" id="colorPickerButton" class="color-picker-button" aria-haspopup="listbox" aria-expanded="false">
+              <span id="colorPickerSwatch" class="color-option-swatch"></span>
+              <span id="colorPickerText" class="color-picker-text">Choose a colour</span>
+              <span class="color-picker-chevron">⌄</span>
+            </button>
+            <input id="colorSelect" type="hidden" value="0" />
+            <div id="colorOptions" class="color-options hidden" role="listbox"></div>
+          </div>
+        </label>
+        <div class="colour-preview-card">
+          <div id="catalogColorPreview" class="colour-preview-swatch"></div>
+          <div><strong id="catalogColorPreviewName">Choose a colour</strong><div id="catalogColorPreviewCode" class="muted compact no-top-gap"></div></div>
         </div>
         <p id="materialFamilyHint" class="muted compact"></p>
       </div>
@@ -123,6 +134,7 @@
           <label>Colour name<input id="colorNameCustom" placeholder="e.g. Copper" /></label>
           <label>Colour<input id="colorHexCustom" type="color" value="#808080" /></label>
         </div>
+        <label>Manufacturer colour code<input id="colorCodeCustom" placeholder="e.g. 11100 (optional)" /></label>
         <label class="switch-row"><span>Save this combination to my catalogue</span><input id="saveToCatalog" type="checkbox" checked /></label>
       </div>
     </section>
@@ -152,13 +164,22 @@
       <button type="button" id="closePrinterDialog" class="icon-button subtle" aria-label="Close">×</button>
     </div>
     <input type="hidden" id="printerId" />
-    <label>Quick setup<select id="printerPreset"><option value="custom">Custom printer</option><option value="snapmaker-u1">Snapmaker U1 — 4 toolheads</option><option value="single">Standard single-filament printer</option></select></label>
     <label>Printer name<input id="printerName" required placeholder="e.g. Workshop U1" /></label>
-    <label>Model<input id="printerModel" required placeholder="e.g. Snapmaker U1" /></label>
+    <label>Brand<select id="printerBrandSelect"></select></label>
+    <div id="printerCatalogFields">
+      <label>Model<select id="printerModelSelect"></select></label>
+    </div>
+    <div id="printerCustomFields" class="hidden">
+      <div class="two-col">
+        <label>Custom brand<input id="printerBrandCustom" placeholder="e.g. Voron" /></label>
+        <label>Custom model<input id="printerModelCustom" placeholder="e.g. 2.4" /></label>
+      </div>
+    </div>
     <div class="two-col">
-      <label>Loading system<select id="printerSystem"><option value="single">Single filament</option><option value="ams">AMS / multi-spool</option><option value="toolchanger">Toolchanger</option><option value="other">Other multi-material</option></select></label>
+      <label>Filament system<select id="printerSystemSelect"></select></label>
       <label>Filament positions<input id="printerSlotCount" type="number" min="1" max="16" value="1" required /></label>
     </div>
+    <p id="printerSystemHint" class="muted compact"></p>
     <label>Notes<textarea id="printerNotes" rows="3" placeholder="Optional notes"></textarea></label>
     <div class="dialog-actions">
       <button type="button" id="deletePrinterBtn" class="danger-button hidden">Delete</button><span class="grow"></span>

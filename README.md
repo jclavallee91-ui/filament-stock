@@ -1,57 +1,99 @@
-# Filament Stock PWA — Version 2
+# Filament Stock PWA — Version 3
 
-Version 2 adds the two requested features:
+Version 3 focuses on making filament and printer entry faster and more accurate.
 
-1. **Printer loading management**
-   - Add any number of 3D printers.
-   - Configure single-filament, AMS/multi-spool, toolchanger, or other multi-material systems.
-   - Set 1–16 filament positions per printer.
-   - Snapmaker U1 quick setup creates four toolhead positions.
-   - Each position links directly to an actual spool in your inventory.
-   - A spool is automatically moved if you assign it to a different printer/slot.
-   - Inventory cards show when a spool is loaded and where.
+## What changed in Version 3
 
-2. **Filament catalogue and dropdown entry**
-   - Brand → Product/Material → Colour dependent dropdowns.
-   - Starter catalogue for several common filament brands.
-   - Material family is stored separately from the manufacturer's product line.
-   - Custom filament combinations can be saved into your personal catalogue and appear in the dropdowns later.
-   - Built-in catalogue data lives in `catalog.json`, making it easy to expand without changing the app logic.
+### 1. Colour preview fixed and expanded
+
+- Catalogue colours now show a real colour swatch in the selector.
+- The selected colour is shown in a larger live preview before saving.
+- Saved inventory cards use the selected catalogue colour.
+- Editing a spool restores its colour selection and preview.
+- Manufacturer colour codes are saved with the spool and shown on inventory cards when available.
+
+### 2. Brand → Product/Material → Colour catalogue flow
+
+When adding a spool, the selectors now cascade:
+
+1. Choose a **Brand**.
+2. The **Product / material** menu shows products recorded for that brand.
+3. The **Colour** menu shows colours recorded for that exact product.
+4. Each colour option displays its swatch and manufacturer colour code when the catalogue has one.
+
+The built-in catalogue has been substantially expanded. Bambu Lab has the deepest starter data, including many current product lines and manufacturer colour codes. Other major brands are included as a growing starter catalogue.
+
+If something is missing, turn on **Use custom filament entry**. You can enter the brand, material family, product, colour, optional manufacturer colour code, and save the combination to your personal catalogue for future dropdown use.
+
+### 3. Printer Brand → Model → Filament System setup
+
+Printer setup no longer uses the old Quick Setup menu. It now cascades:
+
+1. Choose the **printer brand**.
+2. Choose the **printer model**.
+3. Choose the **filament system** used with that model.
+4. The app configures the appropriate number of filament positions for that setup.
+
+The starter printer catalogue includes:
+
+- Bambu Lab
+- Prusa Research
+- Snapmaker
+- Creality
+- Anycubic
+- ELEGOO
+- QIDI Tech
+- FlashForge
+- Sovol
+- Raise3D
+
+There is always an **Other / Custom** choice, as well as a **Custom filament positions** option from 1–16 positions.
+
+The Snapmaker U1 entry includes its four-toolhead configuration.
 
 ## Existing features retained
 
-- Add/edit/delete individual spools
-- Remaining weight tracking
-- Tare weight
+- Add, edit, and delete individual filament spools
+- Track remaining and original weight
+- Empty-spool/tare weight
 - Open/sealed status
 - Storage location and notes
 - Low-stock warnings
-- Search and material filtering
-- "Used in print" gram subtraction
-- Offline operation
-- Home Screen installation on iPhone
+- Search and material-family filtering
+- **Used in print** gram subtraction
+- Add multiple printers
+- Link real inventory spools to printer filament positions
+- Automatically move a spool when it is assigned to another printer/position
+- Dashboard showing printer loading and low stock
+- Offline PWA operation
+- iPhone Home Screen installation
 - JSON backup/import
 
-Backups now contain spools, printers, slot assignments, and custom catalogue entries.
+Backups contain spools, printers, loaded-slot assignments, manufacturer colour codes, and custom catalogue entries.
 
-## Updating an existing GitHub Pages installation
+## Updating your existing GitHub Pages app from Version 2
 
-If Version 1 is already published on GitHub Pages:
+**Export a backup from Version 2 before updating.** The app is designed to preserve your existing local database on the same GitHub Pages address, but having a backup is the safest approach.
 
-1. Unzip Version 2.
-2. Open your existing `filament-stock` GitHub repository.
-3. Replace/upload the files in the repository root with the Version 2 files.
-4. Make sure `catalog.json` is also uploaded.
-5. Commit the changes.
-6. Leave the GitHub Pages settings as they are.
-7. Open the app once in Safari while online. The Version 2 service worker will replace the old cached app.
+1. Download and unzip the Version 3 ZIP.
+2. Open your existing `filament-stock` repository on GitHub.
+3. Choose **Add file → Upload files**.
+4. Upload the Version 3 files into the repository root, replacing the old files when GitHub prompts you.
+5. Make sure both `catalog.json` and the new `printer-catalog.json` are present at the root beside `index.html`.
+6. Commit the changes to your `main` branch.
+7. Leave your existing **Settings → Pages** configuration unchanged.
+8. Wait for GitHub Pages to deploy the new commit.
+9. On your iPhone, visit the GitHub Pages address once in Safari while online and refresh it. This lets the Version 3 service worker replace the old cached app files.
+10. Close and reopen the Home Screen app. Under **Settings → About**, it should say **Version 3.0**.
 
-The database name is unchanged and the IndexedDB schema upgrades from version 1 to version 2, so existing Version 1 spool data is designed to remain in place when updating on the same GitHub Pages address.
+The app deliberately keeps the same IndexedDB database name and Version 2 schema, because Version 3 adds catalogue/UI data without requiring a destructive database migration. Existing spool and printer records on the same site address are therefore designed to remain in place.
+
+If the Home Screen app still shows the old interface, refresh the GitHub Pages site in Safari again and then fully close/reopen the Home Screen app. Do not clear Safari website data unless you have exported a backup first.
 
 ## New installation
 
-Upload all files in this folder to a GitHub Pages repository, with `index.html` at the repository root. Then open the HTTPS GitHub Pages address in Safari and choose **Share → Add to Home Screen**.
+Upload all files in this folder to a GitHub Pages repository with `index.html` at the repository root. After GitHub Pages publishes it, open the HTTPS Pages address in Safari on the iPhone and choose **Share → Add to Home Screen**.
 
-## Note about the starter catalogue
+## Catalogue note
 
-The included catalogue is intentionally a starter catalogue, not a claim of every current manufacturer colour or product. Use **Custom filament entry** for anything missing. Saved custom combinations become part of your own dropdown catalogue.
+The built-in catalogues are intended to make common choices fast, but manufacturer lineups change. They are not a guarantee that every printer, filament product, colour, accessory combination, or regional SKU is represented. The Custom options are intentionally kept available everywhere so the app remains useful when the starter database is incomplete.

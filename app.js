@@ -10,6 +10,7 @@ let allPrinters = [];
 let builtInCatalog = { version: 1, brands: [] };
 let mergedCatalog = { version: 1, brands: [] };
 let customCatalogEntries = [];
+let printerCatalog = { version: 1, brands: [] };
 
 const $ = (id) => document.getElementById(id);
 
@@ -93,6 +94,17 @@ async function loadBuiltInCatalog() {
   }
 }
 
+async function loadPrinterCatalog() {
+  try {
+    const response = await fetch("printer-catalog.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("printer catalogue load failed");
+    printerCatalog = await response.json();
+  } catch (error) {
+    console.warn("Printer catalogue unavailable", error);
+    printerCatalog = { version: 1, brands: [] };
+  }
+}
+
 function slugify(value) {
   return String(value || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
@@ -126,7 +138,7 @@ function rebuildMergedCatalog() {
     }
 
     if (!product.colors.some(c => c.name.toLowerCase() === colorName.toLowerCase())) {
-      product.colors.push({ name: colorName, hex: entry.colorHex || "#808080", custom: true });
+      product.colors.push({ name: colorName, hex: entry.colorHex || "#808080", code: entry.colorCode || "", custom: true });
     }
   }
 
@@ -178,6 +190,7 @@ function renderSpoolCard(spool, compact = false) {
   const loadedBadge = loadedAt ? `<span class="badge loaded">Loaded: ${escapeHtml(loadedAt)}</span>` : "";
   const location = spool.location ? `<div class="spool-location">📦 ${escapeHtml(spool.location)}</div>` : "";
   const family = spool.materialFamily ? `${escapeHtml(spool.materialFamily)} • ` : "";
+  const codeLine = spool.manufacturerColorCode ? `<div class="spool-code">Colour code: ${escapeHtml(spool.manufacturerColorCode)}</div>` : "";
 
   return `
     <article class="spool-card">
@@ -186,6 +199,7 @@ function renderSpoolCard(spool, compact = false) {
         <div>
           <div class="spool-title">${escapeHtml(spool.colorName)}</div>
           <div class="spool-subtitle">${escapeHtml(spool.brand)} • ${family}${escapeHtml(spool.material)}</div>
+          ${codeLine}
           ${location}
           <div>${lowBadge} ${openBadge} ${loadedBadge}</div>
         </div>
@@ -203,7 +217,7 @@ function spoolOptionLabel(spool) {
 function renderPrinterCard(printer, compact = false) {
   const slots = printer.slots || [];
   const loaded = slots.filter(s => s.spoolId).length;
-  const systemText = printer.systemType === "toolchanger" ? "Toolchanger" : printer.systemType === "ams" ? "AMS / multi-spool" : printer.systemType === "single" ? "Single filament" : "Multi-material";
+  const systemText = printer.systemName || (printer.systemType === "toolchanger" ? "Toolchanger" : printer.systemType === "ams" ? "AMS / multi-spool" : printer.systemType === "single" ? "Single filament" : printer.systemType === "idex" ? "IDEX" : printer.systemType === "dual" ? "Dual extruder" : "Multi-material");
 
   const slotRows = slots.map((slot, index) => {
     const options = [`<option value="">— Empty —</option>`]
@@ -214,7 +228,7 @@ function renderPrinterCard(printer, compact = false) {
 
   return `<article class="printer-card">
     <div class="printer-header">
-      <div><div class="printer-title">${escapeHtml(printer.name)}</div><div class="printer-subtitle">${escapeHtml(printer.model)} • ${systemText} • ${slots.length} position${slots.length === 1 ? "" : "s"}</div></div>
+      <div><div class="printer-title">${escapeHtml(printer.name)}</div><div class="printer-subtitle">${printer.brand ? `${escapeHtml(printer.brand)} • ` : ""}${escapeHtml(printer.model)} • ${escapeHtml(systemText)} • ${slots.length} position${slots.length === 1 ? "" : "s"}</div></div>
       ${compact ? "" : `<button class="secondary-button" onclick="openEditPrinter('${printer.id}')">Edit</button>`}
     </div>
     ${slotRows || `<div class="empty-state">No filament positions configured.</div>`}
@@ -302,17 +316,30 @@ function populateProductSelect(selectedId = null) {
   const select = $("productSelect");
   const previous = selectedId || select.value;
   const products = brand?.products || [];
-  select.innerHTML = products.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join("");
+  select.innerHTML = products.map(p => `<option value="${p.id}">${escapeHtml(p.name)}${p.family ? ` — ${escapeHtml(p.family)}` : ""}</option>`).join("");
   if (products.some(p => p.id === previous)) select.value = previous;
   populateColorSelect();
 }
 
+function colorDisplayName(color) {
+  if (!color) return "Choose a colour";
+  return `${color.name}${color.code ? ` — ${color.code}` : ""}`;
+}
+
 function populateColorSelect(selectedIndex = null) {
   const product = currentProduct();
-  const select = $("colorSelect");
+  const hidden = $("colorSelect");
   const colors = product?.colors || [];
-  select.innerHTML = colors.map((c, i) => `<option value="${i}">${escapeHtml(c.name)}</option>`).join("");
-  if (selectedIndex !== null && colors[selectedIndex]) select.value = String(selectedIndex);
+  let idx = selectedIndex !== null && colors[selectedIndex] ? Number(selectedIndex) : Number(hidden.value || 0);
+  if (!colors[idx]) idx = 0;
+  hidden.value = String(idx);
+
+  const options = $("colorOptions");
+  options.innerHTML = colors.length ? colors.map((c, i) => `
+    <button type="button" class="color-option ${i === idx ? "selected" : ""}" role="option" aria-selected="${i === idx ? "true" : "false"}" onclick="selectCatalogColor(${i})">
+      <span class="color-option-swatch" style="background:${escapeHtml(c.hex || "#808080")}"></span>
+      <span class="color-option-copy"><strong>${escapeHtml(c.name)}</strong><small>${c.code ? `Manufacturer code ${escapeHtml(c.code)}` : "No manufacturer colour code in catalogue"}</small></span>
+    </button>`).join("") : `<div class="empty-state compact-empty">No colours are listed for this product. Use Custom Filament to add one.</div>`;
   updateCatalogPreview();
   if (!$("spoolId").value && product?.spoolSizes?.length) {
     $("initialWeight").value = product.spoolSizes[0];
@@ -320,11 +347,31 @@ function populateColorSelect(selectedIndex = null) {
   }
 }
 
+window.selectCatalogColor = function(index) {
+  $("colorSelect").value = String(index);
+  updateCatalogPreview();
+  $("colorOptions").classList.add("hidden");
+  $("colorPickerButton").setAttribute("aria-expanded", "false");
+  populateColorSelect(index);
+};
+
 function updateCatalogPreview() {
   const product = currentProduct();
   const color = currentColor();
-  $("catalogColorPreview").value = color?.hex || "#808080";
-  $("materialFamilyHint").textContent = product ? `Material family: ${product.family || "Other"}` : "";
+  const hex = color?.hex || "#808080";
+  $("catalogColorPreview").style.background = hex;
+  $("catalogColorPreviewName").textContent = color?.name || "Choose a colour";
+  $("catalogColorPreviewCode").textContent = color?.code ? `Manufacturer colour code: ${color.code}` : "No manufacturer colour code stored for this colour";
+  $("colorPickerSwatch").style.background = hex;
+  $("colorPickerText").textContent = colorDisplayName(color);
+  $("materialFamilyHint").textContent = product ? `Material family: ${product.family || "Other"} • ${product.colors?.length || 0} catalogue colour${product.colors?.length === 1 ? "" : "s"}` : "";
+}
+
+function toggleColorOptions(force) {
+  const menu = $("colorOptions");
+  const shouldOpen = typeof force === "boolean" ? force : menu.classList.contains("hidden");
+  menu.classList.toggle("hidden", !shouldOpen);
+  $("colorPickerButton").setAttribute("aria-expanded", shouldOpen ? "true" : "false");
 }
 
 function toggleFilamentMode() {
@@ -353,6 +400,7 @@ function resetSpoolForm() {
   $("tareWeight").value = 0;
   $("lowStockThreshold").value = 150;
   $("colorHexCustom").value = "#808080";
+  if ($("colorCodeCustom")) $("colorCodeCustom").value = "";
   $("saveToCatalog").checked = true;
   $("useCustomFilament").checked = mergedCatalog.brands.length === 0;
   $("deleteSpoolBtn").classList.add("hidden");
@@ -395,6 +443,7 @@ window.openEditSpool = function(id) {
     $("materialCustom").value = spool.material || "";
     $("colorNameCustom").value = spool.colorName || "";
     $("colorHexCustom").value = spool.colorHex || "#808080";
+    if ($("colorCodeCustom")) $("colorCodeCustom").value = spool.manufacturerColorCode || "";
     $("saveToCatalog").checked = false;
   }
   toggleFilamentMode();
@@ -414,14 +463,105 @@ window.openUseDialog = function(id) {
   $("useDialog").showModal();
 };
 
+function currentPrinterBrand() {
+  return printerCatalog.brands?.find(b => b.id === $("printerBrandSelect").value) || null;
+}
+
+function currentPrinterModel() {
+  const brand = currentPrinterBrand();
+  return brand?.models?.find(m => m.id === $("printerModelSelect").value) || null;
+}
+
+function currentPrinterSystem() {
+  const val = $("printerSystemSelect").value;
+  if (val === "__custom__") return null;
+  const systems = $("printerBrandSelect").value === "__custom__"
+    ? genericPrinterSystems()
+    : (currentPrinterModel()?.systems || []);
+  return systems.find(sys => sys.id === val) || null;
+}
+
+function populatePrinterBrands(selectedId = null) {
+  const select = $("printerBrandSelect");
+  const prev = selectedId || select.value;
+  select.innerHTML = (printerCatalog.brands || []).map(b => `<option value="${b.id}">${escapeHtml(b.name)}</option>`).join("") + `<option value="__custom__">Other / Custom</option>`;
+  if ([...select.options].some(o => o.value === prev)) select.value = prev;
+  populatePrinterModels();
+}
+
+function populatePrinterModels(selectedId = null) {
+  const custom = $("printerBrandSelect").value === "__custom__";
+  $("printerCatalogFields").classList.toggle("hidden", custom);
+  $("printerCustomFields").classList.toggle("hidden", !custom);
+  const select = $("printerModelSelect");
+  if (custom) {
+    select.innerHTML = "";
+    populatePrinterSystems();
+    return;
+  }
+  const brand = currentPrinterBrand();
+  const models = brand?.models || [];
+  const prev = selectedId || select.value;
+  select.innerHTML = models.map(m => `<option value="${m.id}">${escapeHtml(m.name)}</option>`).join("");
+  if (models.some(m => m.id === prev)) select.value = prev;
+  populatePrinterSystems();
+}
+
+function genericPrinterSystems() {
+  return [
+    {id:"single",name:"Single spool",type:"single",slots:1,description:"One filament position"},
+    {id:"dual",name:"Dual extruder / IDEX",type:"dual",slots:2,description:"Two filament positions"},
+    {id:"multi4",name:"4-spool multi-material system",type:"ams",slots:4,description:"Four filament positions"},
+    {id:"tool4",name:"4-toolhead toolchanger",type:"toolchanger",slots:4,description:"Four independent toolheads"}
+  ];
+}
+
+function populatePrinterSystems(selectedId = null) {
+  const customBrand = $("printerBrandSelect").value === "__custom__";
+  const model = currentPrinterModel();
+  const systems = customBrand ? genericPrinterSystems() : (model?.systems || []);
+  const select = $("printerSystemSelect");
+  const prev = selectedId || select.value;
+  select.innerHTML = systems.map(sys => `<option value="${sys.id}">${escapeHtml(sys.name)} — ${sys.slots} position${sys.slots === 1 ? "" : "s"}</option>`).join("") + `<option value="__custom__">Custom filament positions</option>`;
+  if ([...select.options].some(o => o.value === prev)) select.value = prev;
+  updatePrinterSystemSelection();
+}
+
+function updatePrinterSystemSelection() {
+  const select = $("printerSystemSelect");
+  const custom = select.value === "__custom__";
+  const model = currentPrinterModel();
+  const systems = $("printerBrandSelect").value === "__custom__" ? genericPrinterSystems() : (model?.systems || []);
+  const sys = systems.find(x => x.id === select.value);
+  $("printerSlotCount").disabled = !custom;
+  if (sys) $("printerSlotCount").value = sys.slots;
+  $("printerSystemHint").textContent = custom ? "Choose the number of filament positions manually." : (sys?.description || "Slot count is configured from the selected filament system.");
+}
+
+function findPrinterCatalogMatch(printer) {
+  const brandText = String(printer.brand || "").toLowerCase();
+  const modelText = String(printer.model || "").toLowerCase();
+  for (const brand of printerCatalog.brands || []) {
+    if (brandText && brand.name.toLowerCase() !== brandText) continue;
+    for (const model of brand.models || []) {
+      if (model.name.toLowerCase() === modelText || (!brandText && modelText.includes(model.name.toLowerCase()))) {
+        const slots = (printer.slots || []).length || 1;
+        const sys = (model.systems || []).find(x => x.id === printer.systemId) || (model.systems || []).find(x => x.slots === slots && x.type === printer.systemType) || (model.systems || []).find(x => x.slots === slots);
+        return {brandId:brand.id,modelId:model.id,systemId:sys?.id || "__custom__"};
+      }
+    }
+  }
+  return null;
+}
+
 function resetPrinterForm() {
   $("printerForm").reset();
   $("printerId").value = "";
-  $("printerPreset").value = "custom";
-  $("printerSystem").value = "single";
   $("printerSlotCount").value = 1;
+  $("printerSlotCount").disabled = true;
   $("deletePrinterBtn").classList.add("hidden");
   $("printerDialogTitle").textContent = "Add Printer";
+  populatePrinterBrands();
 }
 
 function openAddPrinter() {
@@ -435,10 +575,25 @@ window.openEditPrinter = function(id) {
   resetPrinterForm();
   $("printerId").value = printer.id;
   $("printerName").value = printer.name || "";
-  $("printerModel").value = printer.model || "";
-  $("printerSystem").value = printer.systemType || "single";
-  $("printerSlotCount").value = (printer.slots || []).length || 1;
   $("printerNotes").value = printer.notes || "";
+  const match = findPrinterCatalogMatch(printer);
+  if (match) {
+    populatePrinterBrands(match.brandId);
+    $("printerBrandSelect").value = match.brandId;
+    populatePrinterModels(match.modelId);
+    $("printerModelSelect").value = match.modelId;
+    populatePrinterSystems(match.systemId);
+    $("printerSystemSelect").value = match.systemId;
+    updatePrinterSystemSelection();
+  } else {
+    $("printerBrandSelect").value = "__custom__";
+    populatePrinterModels();
+    $("printerBrandCustom").value = printer.brand || "";
+    $("printerModelCustom").value = printer.model || "";
+    $("printerSystemSelect").value = "__custom__";
+    updatePrinterSystemSelection();
+    $("printerSlotCount").value = (printer.slots || []).length || 1;
+  }
   $("deletePrinterBtn").classList.remove("hidden");
   $("printerDialogTitle").textContent = "Edit Printer";
   $("printerDialog").showModal();
@@ -500,7 +655,7 @@ async function saveCustomCatalogEntry(entry) {
 async function exportBackup() {
   const payload = {
     app: "Filament Stock",
-    version: 2,
+    version: 3,
     exportedAt: new Date().toISOString(),
     spools: allSpools,
     printers: allPrinters,
@@ -552,7 +707,7 @@ async function importBackup(file) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await openDb();
-  await loadBuiltInCatalog();
+  await Promise.all([loadBuiltInCatalog(), loadPrinterCatalog()]);
   await refresh();
 
   document.querySelectorAll("[data-view]").forEach(btn => {
@@ -572,7 +727,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   $("useCustomFilament").addEventListener("change", toggleFilamentMode);
   $("brandSelect").addEventListener("change", () => populateProductSelect());
   $("productSelect").addEventListener("change", () => populateColorSelect());
-  $("colorSelect").addEventListener("change", updateCatalogPreview);
+  $("colorPickerButton").addEventListener("click", (e) => { e.stopPropagation(); toggleColorOptions(); });
+  document.addEventListener("click", (e) => { if (!$("colorPicker").contains(e.target)) toggleColorOptions(false); });
 
   $("spoolForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -580,31 +736,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     const existing = allSpools.find(s => s.id === existingId);
     const customMode = $("useCustomFilament").checked;
 
-    let brand, materialFamily, material, colorName, colorHex;
+    let brand, materialFamily, material, colorName, colorHex, manufacturerColorCode = "";
     if (customMode) {
       brand = $("brandCustom").value.trim();
       materialFamily = $("familyCustom").value.trim() || "Other";
       material = $("materialCustom").value.trim();
       colorName = $("colorNameCustom").value.trim();
       colorHex = $("colorHexCustom").value;
+      manufacturerColorCode = $("colorCodeCustom") ? $("colorCodeCustom").value.trim() : "";
       if (!brand || !material || !colorName) {
         alert("Please enter a brand, product/material, and colour name.");
         return;
       }
       if ($("saveToCatalog").checked) {
         await saveCustomCatalogEntry({
-          id: uid(), brand, family: materialFamily, product: material, colorName, colorHex,
+          id: uid(), brand, family: materialFamily, product: material, colorName, colorHex, colorCode: manufacturerColorCode,
           spoolSize: Number($("initialWeight").value || 1000)
         });
       }
     } else {
       const b = currentBrand(), p = currentProduct(), c = currentColor();
       if (!b || !p || !c) { alert("Please choose a filament from the catalogue."); return; }
-      brand = b.name; materialFamily = p.family || "Other"; material = p.name; colorName = c.name; colorHex = c.hex || "#808080";
+      brand = b.name; materialFamily = p.family || "Other"; material = p.name; colorName = c.name; colorHex = c.hex || "#808080"; manufacturerColorCode = c.code || "";
     }
 
     const spool = {
-      id: existingId || uid(), brand, materialFamily, material, colorName, colorHex,
+      id: existingId || uid(), brand, materialFamily, material, colorName, colorHex, manufacturerColorCode,
       initialWeightGrams: Number($("initialWeight").value),
       remainingWeightGrams: Number($("remainingWeight").value),
       spoolTareWeightGrams: Number($("tareWeight").value || 0),
@@ -650,29 +807,33 @@ document.addEventListener("DOMContentLoaded", async () => {
   $("addPrinterBtn").addEventListener("click", openAddPrinter);
   $("closePrinterDialog").addEventListener("click", () => $("printerDialog").close());
   $("cancelPrinterBtn").addEventListener("click", () => $("printerDialog").close());
-  $("printerPreset").addEventListener("change", () => {
-    const preset = $("printerPreset").value;
-    if (preset === "snapmaker-u1") {
-      $("printerName").value = "Snapmaker U1";
-      $("printerModel").value = "Snapmaker U1";
-      $("printerSystem").value = "toolchanger";
-      $("printerSlotCount").value = 4;
-    } else if (preset === "single") {
-      $("printerSystem").value = "single";
-      $("printerSlotCount").value = 1;
-    }
-  });
+  $("printerBrandSelect").addEventListener("change", () => populatePrinterModels());
+  $("printerModelSelect").addEventListener("change", () => populatePrinterSystems());
+  $("printerSystemSelect").addEventListener("change", updatePrinterSystemSelection);
 
   $("printerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const existingId = $("printerId").value;
     const existing = allPrinters.find(p => p.id === existingId);
+    const isCustom = $("printerBrandSelect").value === "__custom__";
+    const brandObj = currentPrinterBrand();
+    const modelObj = currentPrinterModel();
+    const systemObj = currentPrinterSystem();
+    const brand = isCustom ? $("printerBrandCustom").value.trim() : (brandObj?.name || "");
+    const model = isCustom ? $("printerModelCustom").value.trim() : (modelObj?.name || "");
+    if (!brand || !model) { alert("Please choose or enter a printer brand and model."); return; }
+    const customSystem = $("printerSystemSelect").value === "__custom__";
     const count = Math.max(1, Math.min(16, Number($("printerSlotCount").value || 1)));
     const printer = {
       id: existingId || uid(),
       name: $("printerName").value.trim(),
-      model: $("printerModel").value.trim(),
-      systemType: $("printerSystem").value,
+      brand,
+      brandId: isCustom ? "" : (brandObj?.id || ""),
+      model,
+      modelId: isCustom ? "" : (modelObj?.id || ""),
+      systemId: customSystem ? "" : (systemObj?.id || ""),
+      systemName: customSystem ? `Custom — ${count} position${count === 1 ? "" : "s"}` : (systemObj?.name || "Custom"),
+      systemType: customSystem ? (count === 1 ? "single" : "other") : (systemObj?.type || "other"),
       slots: createSlots(count, existing?.slots || []),
       notes: $("printerNotes").value.trim(),
       dateAdded: existing?.dateAdded || new Date().toISOString()

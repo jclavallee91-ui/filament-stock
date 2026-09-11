@@ -1,0 +1,1349 @@
+{
+  "version": 1,
+  "updated": "2026-09-10",
+  "brands": [
+    {
+      "id": "bambu-lab",
+      "name": "Bambu Lab",
+      "models": [
+        {
+          "id": "a1-mini",
+          "name": "A1 mini",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams-lite",
+              "name": "AMS lite",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a1",
+          "name": "A1",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams-lite",
+              "name": "AMS lite",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "p1p",
+          "name": "P1P",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams",
+              "name": "1 × AMS",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams-2",
+              "name": "2 × AMS",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            },
+            {
+              "id": "ams-3",
+              "name": "3 × AMS",
+              "type": "ams",
+              "slots": 12,
+              "description": ""
+            },
+            {
+              "id": "ams-4",
+              "name": "4 × AMS",
+              "type": "ams",
+              "slots": 16,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "p1s",
+          "name": "P1S",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams",
+              "name": "1 × AMS / AMS 2 Pro",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams-2",
+              "name": "2 × AMS units",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            },
+            {
+              "id": "ams-3",
+              "name": "3 × AMS units",
+              "type": "ams",
+              "slots": 12,
+              "description": ""
+            },
+            {
+              "id": "ams-4",
+              "name": "4 × AMS units",
+              "type": "ams",
+              "slots": 16,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "p2s",
+          "name": "P2S",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams",
+              "name": "1 × AMS / AMS 2 Pro",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams-2",
+              "name": "2 × AMS units",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            },
+            {
+              "id": "ams-3",
+              "name": "3 × AMS units",
+              "type": "ams",
+              "slots": 12,
+              "description": ""
+            },
+            {
+              "id": "ams-4",
+              "name": "4 × AMS units",
+              "type": "ams",
+              "slots": 16,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "x1c",
+          "name": "X1 Carbon",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams",
+              "name": "1 × AMS",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams-2",
+              "name": "2 × AMS units",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            },
+            {
+              "id": "ams-3",
+              "name": "3 × AMS units",
+              "type": "ams",
+              "slots": 12,
+              "description": ""
+            },
+            {
+              "id": "ams-4",
+              "name": "4 × AMS units",
+              "type": "ams",
+              "slots": 16,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "x1e",
+          "name": "X1E",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams",
+              "name": "1 × AMS",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams-2",
+              "name": "2 × AMS units",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            },
+            {
+              "id": "ams-3",
+              "name": "3 × AMS units",
+              "type": "ams",
+              "slots": 12,
+              "description": ""
+            },
+            {
+              "id": "ams-4",
+              "name": "4 × AMS units",
+              "type": "ams",
+              "slots": 16,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "h2s",
+          "name": "H2S",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ams2",
+              "name": "AMS 2 Pro / 4-spool system",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams2-2",
+              "name": "2 × 4-spool systems",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "h2d",
+          "name": "H2D",
+          "systems": [
+            {
+              "id": "dual-direct",
+              "name": "Dual-nozzle direct feed",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            },
+            {
+              "id": "ams2",
+              "name": "4-spool AMS system",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ams2-2",
+              "name": "2 × 4-spool systems",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "h2c",
+          "name": "H2C",
+          "systems": [
+            {
+              "id": "multi-material",
+              "name": "Multi-material setup",
+              "type": "other",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "multi-8",
+              "name": "Expanded multi-material setup",
+              "type": "other",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prusa",
+      "name": "Prusa Research",
+      "models": [
+        {
+          "id": "mk4s",
+          "name": "MK4S",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "mmu3",
+              "name": "MMU3",
+              "type": "mmu",
+              "slots": 5,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "core-one-plus",
+          "name": "CORE One+",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "mmu3",
+              "name": "MMU3",
+              "type": "mmu",
+              "slots": 5,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "core-one-l-plus",
+          "name": "CORE One L+",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "xl-plus",
+          "name": "XL+",
+          "systems": [
+            {
+              "id": "xl1",
+              "name": "1 toolhead",
+              "type": "toolchanger",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "xl2",
+              "name": "2 toolheads",
+              "type": "toolchanger",
+              "slots": 2,
+              "description": ""
+            },
+            {
+              "id": "xl5",
+              "name": "5 toolheads",
+              "type": "toolchanger",
+              "slots": 5,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "xl",
+          "name": "Original Prusa XL",
+          "systems": [
+            {
+              "id": "xl1",
+              "name": "1 toolhead",
+              "type": "toolchanger",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "xl2",
+              "name": "2 toolheads",
+              "type": "toolchanger",
+              "slots": 2,
+              "description": ""
+            },
+            {
+              "id": "xl5",
+              "name": "5 toolheads",
+              "type": "toolchanger",
+              "slots": 5,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "mini-plus",
+          "name": "MINI+",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snapmaker",
+      "name": "Snapmaker",
+      "models": [
+        {
+          "id": "u1",
+          "name": "U1",
+          "systems": [
+            {
+              "id": "snapswap",
+              "name": "SnapSwap — 4 independent toolheads",
+              "type": "toolchanger",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "j1s",
+          "name": "J1s",
+          "systems": [
+            {
+              "id": "idex",
+              "name": "IDEX — 2 independent extruders",
+              "type": "idex",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "j1",
+          "name": "J1",
+          "systems": [
+            {
+              "id": "idex",
+              "name": "IDEX — 2 independent extruders",
+              "type": "idex",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "artisan",
+          "name": "Artisan",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "dual-extrusion",
+              "name": "Dual Extrusion Module",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a350t",
+          "name": "Snapmaker 2.0 A350T",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "dual-extrusion",
+              "name": "Dual Extrusion Module",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a250t",
+          "name": "Snapmaker 2.0 A250T",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "dual-extrusion",
+              "name": "Dual Extrusion Module",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "a150",
+          "name": "Snapmaker 2.0 A150",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creality",
+      "name": "Creality",
+      "models": [
+        {
+          "id": "k2-plus",
+          "name": "K2 Plus",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "cfs",
+              "name": "CFS — 4 spool",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "cfs-2",
+              "name": "2 × CFS — 8 spool",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "k2-pro",
+          "name": "K2 Pro",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "cfs",
+              "name": "CFS — 4 spool",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "name": "K2",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "cfs",
+              "name": "CFS — 4 spool",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "creality-hi",
+          "name": "Creality Hi",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "cfs",
+              "name": "CFS — 4 spool",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "k1c",
+          "name": "K1C",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "k1-max",
+          "name": "K1 Max",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ender3-v3",
+          "name": "Ender-3 V3",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ender3-v3-ke",
+          "name": "Ender-3 V3 KE",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ender3-v3-se",
+          "name": "Ender-3 V3 SE",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ender5-max",
+          "name": "Ender-5 Max",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anycubic",
+      "name": "Anycubic",
+      "models": [
+        {
+          "id": "kobra-s1",
+          "name": "Kobra S1",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace-pro",
+              "name": "ACE Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace-pro-2",
+              "name": "2 × ACE Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "kobra3",
+          "name": "Kobra 3",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace-pro",
+              "name": "ACE Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace-pro-2",
+              "name": "2 × ACE Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "kobra3-v2",
+          "name": "Kobra 3 V2",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace-pro",
+              "name": "ACE Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace-pro-2",
+              "name": "2 × ACE Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "kobra3-max",
+          "name": "Kobra 3 Max",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace-pro",
+              "name": "ACE Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace-pro-2",
+              "name": "2 × ACE Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "kobra3-max-v2",
+          "name": "Kobra 3 Max V2",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace2-pro",
+              "name": "ACE 2 Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace2-pro-2",
+              "name": "2 × ACE 2 Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "kobra4",
+          "name": "Kobra 4",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "ace2-pro",
+              "name": "ACE 2 Pro — 4 colours",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            },
+            {
+              "id": "ace2-pro-2",
+              "name": "2 × ACE 2 Pro — 8 colours",
+              "type": "ams",
+              "slots": 8,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elegoo",
+      "name": "ELEGOO",
+      "models": [
+        {
+          "id": "centauri-carbon-2",
+          "name": "Centauri Carbon 2",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "centauri-carbon",
+          "name": "Centauri Carbon",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "neptune4",
+          "name": "Neptune 4",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "neptune4-pro",
+          "name": "Neptune 4 Pro",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "neptune4-plus",
+          "name": "Neptune 4 Plus",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "neptune4-max",
+          "name": "Neptune 4 Max",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "orangestorm-giga",
+          "name": "OrangeStorm Giga",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "dual-upgrade",
+              "name": "Dual extrusion upgrade",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qidi",
+      "name": "QIDI Tech",
+      "models": [
+        {
+          "id": "q2",
+          "name": "QIDI Q2",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "plus4",
+          "name": "Plus4",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "q1-pro",
+          "name": "Q1 Pro",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "x-max3",
+          "name": "X-Max 3",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "x-plus3",
+          "name": "X-Plus 3",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "x-smart3",
+          "name": "X-Smart3",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flashforge",
+      "name": "FlashForge",
+      "models": [
+        {
+          "id": "creator5-pro",
+          "name": "Creator 5 Pro",
+          "systems": [
+            {
+              "id": "four-tools",
+              "name": "4 independent toolheads",
+              "type": "toolchanger",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "creator5",
+          "name": "Creator 5",
+          "systems": [
+            {
+              "id": "multi-tools",
+              "name": "Multi-tool setup",
+              "type": "toolchanger",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ad5x",
+          "name": "AD5X",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            },
+            {
+              "id": "multi-color",
+              "name": "Multi-colour system",
+              "type": "ams",
+              "slots": 4,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ad5m",
+          "name": "Adventurer 5M",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "ad5m-pro",
+          "name": "Adventurer 5M Pro",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "guider3-ultra",
+          "name": "Guider 3 Ultra",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sovol",
+      "name": "Sovol",
+      "models": [
+        {
+          "id": "sv08",
+          "name": "SV08",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "sv08-max",
+          "name": "SV08 Max",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "sv07",
+          "name": "SV07",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "sv07-plus",
+          "name": "SV07 Plus",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "sv06-plus",
+          "name": "SV06 Plus",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "zero",
+          "name": "Sovol Zero",
+          "systems": [
+            {
+              "id": "single",
+              "name": "Single spool",
+              "type": "single",
+              "slots": 1,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raise3d",
+      "name": "Raise3D",
+      "models": [
+        {
+          "id": "pro3",
+          "name": "Pro3",
+          "systems": [
+            {
+              "id": "dual",
+              "name": "Dual extruder",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "pro3-plus",
+          "name": "Pro3 Plus",
+          "systems": [
+            {
+              "id": "dual",
+              "name": "Dual extruder",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "pro3-hs",
+          "name": "Pro3 HS",
+          "systems": [
+            {
+              "id": "dual",
+              "name": "Dual extruder",
+              "type": "dual",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "e2cf",
+          "name": "E2CF",
+          "systems": [
+            {
+              "id": "idex",
+              "name": "IDEX — 2 independent extruders",
+              "type": "idex",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "e2",
+          "name": "E2",
+          "systems": [
+            {
+              "id": "idex",
+              "name": "IDEX — 2 independent extruders",
+              "type": "idex",
+              "slots": 2,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Common consumer filament-printer setups. Custom brand/model/system is always available because accessory compatibility and supported slot counts can change."
+}

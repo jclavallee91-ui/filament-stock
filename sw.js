@@ -1,6 +1,6 @@
-const CACHE_NAME = "filament-stock-v2";
+const CACHE_NAME = "filament-stock-v3";
 const ASSETS = [
-  "./", "./index.html", "./styles.css", "./app.js", "./catalog.json", "./manifest.webmanifest",
+  "./", "./index.html", "./styles.css", "./app.js", "./catalog.json", "./printer-catalog.json", "./manifest.webmanifest",
   "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"
 ];
 self.addEventListener("install", event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))); self.skipWaiting(); });

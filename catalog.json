@@ -1,54 +1,4555 @@
 {
-  "version": 1,
+  "version": 3,
+  "updated": "2026-09-10",
+  "notes": "Bambu Lab colour codes are manufacturer 5-digit filament colour codes where present. Other brands are starter catalogue coverage and can be extended with Custom Filament.",
   "brands": [
     {
       "id": "bambu-lab",
       "name": "Bambu Lab",
+      "catalogueNote": "Expanded catalogue. Manufacturer 5-digit colour codes are included where verified.",
       "products": [
-        {"id":"pla-basic","family":"PLA","name":"PLA Basic","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"},{"name":"Green","hex":"#2E7D32"},{"name":"Yellow","hex":"#F9A825"}]},
-        {"id":"pla-matte","family":"PLA","name":"PLA Matte","spoolSizes":[1000],"colors":[{"name":"Charcoal","hex":"#424242"},{"name":"Ivory White","hex":"#F3EDE2"},{"name":"Marine Blue","hex":"#32577A"},{"name":"Grass Green","hex":"#557A46"}]},
-        {"id":"pla-tough-plus","family":"PLA","name":"PLA Tough+","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#B71C1C"},{"name":"Blue","hex":"#1E4F91"}]},
-        {"id":"petg-hf","family":"PETG","name":"PETG HF","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#101010"},{"name":"White","hex":"#F4F4F4"},{"name":"Gray","hex":"#747474"},{"name":"Blue","hex":"#1F5A99"}]},
-        {"id":"tpu-95a-hf","family":"TPU","name":"TPU 95A HF","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F7F7F7"},{"name":"Gray","hex":"#737373"},{"name":"Red","hex":"#B3261E"}]}
+        {
+          "id": "pla-basic",
+          "family": "PLA",
+          "name": "PLA Basic",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Jade White",
+              "hex": "#FFFFFF",
+              "code": "10100"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000",
+              "code": "10101"
+            },
+            {
+              "name": "Silver",
+              "hex": "#A6A9AA",
+              "code": "10102"
+            },
+            {
+              "name": "Gray",
+              "hex": "#8E9089",
+              "code": "10103"
+            },
+            {
+              "name": "Light Gray",
+              "hex": "#D1D3D5",
+              "code": "10104"
+            },
+            {
+              "name": "Dark Gray",
+              "hex": "#545454",
+              "code": "10105"
+            },
+            {
+              "name": "Red",
+              "hex": "#C12E1F",
+              "code": "10200"
+            },
+            {
+              "name": "Beige",
+              "hex": "#F7E6DE",
+              "code": "10201"
+            },
+            {
+              "name": "Magenta",
+              "hex": "#EC008C",
+              "code": "10202"
+            },
+            {
+              "name": "Pink",
+              "hex": "#F55A74",
+              "code": "10203"
+            },
+            {
+              "name": "Hot Pink",
+              "hex": "#F5547C",
+              "code": "10204"
+            },
+            {
+              "name": "Maroon Red",
+              "hex": "#9D2235",
+              "code": "10205"
+            },
+            {
+              "name": "Orange",
+              "hex": "#FF6A13",
+              "code": "10300"
+            },
+            {
+              "name": "Pumpkin Orange",
+              "hex": "#FF9016",
+              "code": "10301"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F4EE2A",
+              "code": "10400"
+            },
+            {
+              "name": "Gold",
+              "hex": "#E4BD68",
+              "code": "10401"
+            },
+            {
+              "name": "Sunflower Yellow",
+              "hex": "#FEC600",
+              "code": "10402"
+            },
+            {
+              "name": "Bambu Green",
+              "hex": "#00AE42",
+              "code": "10501"
+            },
+            {
+              "name": "Mistletoe Green",
+              "hex": "#3F8E43",
+              "code": "10502"
+            },
+            {
+              "name": "Bright Green",
+              "hex": "#BECF00",
+              "code": "10503"
+            },
+            {
+              "name": "Blue",
+              "hex": "#0A2989",
+              "code": "10601"
+            },
+            {
+              "name": "Blue Gray",
+              "hex": "#5B6579",
+              "code": "10602"
+            },
+            {
+              "name": "Cyan",
+              "hex": "#0086D6",
+              "code": "10603"
+            },
+            {
+              "name": "Cobalt Blue",
+              "hex": "#0056B8",
+              "code": "10604"
+            },
+            {
+              "name": "Turquoise",
+              "hex": "#00B1B7",
+              "code": "10605"
+            },
+            {
+              "name": "Purple",
+              "hex": "#5E43B7",
+              "code": "10700"
+            },
+            {
+              "name": "Indigo Purple",
+              "hex": "#482960",
+              "code": "10701"
+            },
+            {
+              "name": "Brown",
+              "hex": "#9D432C",
+              "code": "10800"
+            },
+            {
+              "name": "Bronze",
+              "hex": "#847D48",
+              "code": "10801"
+            },
+            {
+              "name": "Cocoa Brown",
+              "hex": "#6F5034",
+              "code": "10802"
+            }
+          ]
+        },
+        {
+          "id": "pla-matte",
+          "family": "PLA",
+          "name": "PLA Matte",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Ivory White",
+              "hex": "#FFFFFF",
+              "code": "11100"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#000000",
+              "code": "11101"
+            },
+            {
+              "name": "Ash Gray",
+              "hex": "#9B9EA0",
+              "code": "11102"
+            },
+            {
+              "name": "Bone White",
+              "hex": "#CBC6B8",
+              "code": "11103"
+            },
+            {
+              "name": "Nardo Gray",
+              "hex": "#757575",
+              "code": "11104"
+            },
+            {
+              "name": "Scarlet Red",
+              "hex": "#DE4343",
+              "code": "11200"
+            },
+            {
+              "name": "Sakura Pink",
+              "hex": "#E8AFCF",
+              "code": "11201"
+            },
+            {
+              "name": "Dark Red",
+              "hex": "#BB3D43",
+              "code": "11202"
+            },
+            {
+              "name": "Terracotta",
+              "hex": "#B15533",
+              "code": "11203"
+            },
+            {
+              "name": "Plum",
+              "hex": "#950051",
+              "code": "11204"
+            },
+            {
+              "name": "Mandarin Orange",
+              "hex": "#F99963",
+              "code": "11300"
+            },
+            {
+              "name": "Lemon Yellow",
+              "hex": "#F7D959",
+              "code": "11400"
+            },
+            {
+              "name": "Desert Tan",
+              "hex": "#E8DBB7",
+              "code": "11401"
+            },
+            {
+              "name": "Grass Green",
+              "hex": "#61C680",
+              "code": "11500"
+            },
+            {
+              "name": "Dark Green",
+              "hex": "#68724D",
+              "code": "11501"
+            },
+            {
+              "name": "Apple Green",
+              "hex": "#C2E189",
+              "code": "11502"
+            },
+            {
+              "name": "Marine Blue",
+              "hex": "#0078BF",
+              "code": "11600"
+            },
+            {
+              "name": "Ice Blue",
+              "hex": "#A3D8E1",
+              "code": "11601"
+            },
+            {
+              "name": "Dark Blue",
+              "hex": "#042F56",
+              "code": "11602"
+            },
+            {
+              "name": "Sky Blue",
+              "hex": "#56B7E6",
+              "code": "11603"
+            },
+            {
+              "name": "Lilac Purple",
+              "hex": "#AE96D4",
+              "code": "11700"
+            },
+            {
+              "name": "Latte Brown",
+              "hex": "#D3B7A7",
+              "code": "11800"
+            },
+            {
+              "name": "Dark Brown",
+              "hex": "#7D6556",
+              "code": "11801"
+            },
+            {
+              "name": "Dark Chocolate",
+              "hex": "#4D3324",
+              "code": "11802"
+            },
+            {
+              "name": "Caramel",
+              "hex": "#AE835B",
+              "code": "11803"
+            }
+          ]
+        },
+        {
+          "id": "pla-tough-plus",
+          "family": "PLA",
+          "name": "PLA Tough+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#FFFFFF",
+              "code": "12107"
+            },
+            {
+              "name": "Gray",
+              "hex": "#AFB1AE",
+              "code": "12105"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000",
+              "code": "12104"
+            },
+            {
+              "name": "Silver",
+              "hex": "#959698",
+              "code": "12106"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F4D53F",
+              "code": "12401"
+            },
+            {
+              "name": "Cyan",
+              "hex": "#009BD8",
+              "code": "12601"
+            },
+            {
+              "name": "Orange",
+              "hex": "#DC3A27",
+              "code": "12301"
+            }
+          ]
+        },
+        {
+          "id": "pla-silk-plus",
+          "family": "PLA",
+          "name": "PLA Silk+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Gold",
+              "hex": "#F4A925"
+            },
+            {
+              "name": "Silver",
+              "hex": "#C8C8C8"
+            },
+            {
+              "name": "Titan Gray",
+              "hex": "#5F6367"
+            },
+            {
+              "name": "Blue",
+              "hex": "#008BDA"
+            },
+            {
+              "name": "Purple",
+              "hex": "#8671CB"
+            },
+            {
+              "name": "Candy Red",
+              "hex": "#D02727"
+            },
+            {
+              "name": "Candy Green",
+              "hex": "#018814"
+            },
+            {
+              "name": "Rose Gold",
+              "hex": "#BA9594"
+            },
+            {
+              "name": "Baby Blue",
+              "hex": "#A8C6EE"
+            },
+            {
+              "name": "Pink",
+              "hex": "#F7ADA6"
+            },
+            {
+              "name": "Mint",
+              "hex": "#96DCB9"
+            },
+            {
+              "name": "Champagne",
+              "hex": "#F3CFB2"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            }
+          ]
+        },
+        {
+          "id": "pla-cf",
+          "family": "PLA",
+          "name": "PLA-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Burgundy Red",
+              "hex": "#951E23"
+            },
+            {
+              "name": "Iris Purple",
+              "hex": "#69398E"
+            },
+            {
+              "name": "Matcha Green",
+              "hex": "#5C9748"
+            },
+            {
+              "name": "Jeans Blue",
+              "hex": "#6E88BC"
+            },
+            {
+              "name": "Royal Blue",
+              "hex": "#2842AD"
+            },
+            {
+              "name": "Lava Gray",
+              "hex": "#4D5054"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "pla-translucent",
+          "family": "PLA",
+          "name": "PLA Translucent",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Translucent Gray",
+              "hex": "#8E8E8E"
+            },
+            {
+              "name": "Translucent Light Blue",
+              "hex": "#61B0FF"
+            },
+            {
+              "name": "Translucent Olive",
+              "hex": "#748C45"
+            },
+            {
+              "name": "Translucent Brown",
+              "hex": "#C9A381"
+            },
+            {
+              "name": "Translucent Teal",
+              "hex": "#77EDD7"
+            },
+            {
+              "name": "Translucent Orange",
+              "hex": "#FF911A"
+            },
+            {
+              "name": "Translucent Purple",
+              "hex": "#D6ABFF"
+            },
+            {
+              "name": "Translucent Pink",
+              "hex": "#F9C1BD"
+            }
+          ]
+        },
+        {
+          "id": "pla-sparkle",
+          "family": "PLA",
+          "name": "PLA Sparkle",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Classic Gold Sparkle",
+              "hex": "#CEA629"
+            },
+            {
+              "name": "Slate Gray Sparkle",
+              "hex": "#8E9089"
+            },
+            {
+              "name": "Crimson Red Sparkle",
+              "hex": "#792B36"
+            },
+            {
+              "name": "Royal Purple Sparkle",
+              "hex": "#483D8B"
+            },
+            {
+              "name": "Alpine Green Sparkle",
+              "hex": "#3F5443"
+            },
+            {
+              "name": "Onyx Black Sparkle",
+              "hex": "#2D2B28"
+            }
+          ]
+        },
+        {
+          "id": "pla-wood",
+          "family": "PLA",
+          "name": "PLA Wood",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black Walnut",
+              "hex": "#4F3F24"
+            },
+            {
+              "name": "Rosewood",
+              "hex": "#4C241C"
+            },
+            {
+              "name": "Clay Brown",
+              "hex": "#995F11"
+            },
+            {
+              "name": "Classic Birch",
+              "hex": "#918669"
+            },
+            {
+              "name": "White Oak",
+              "hex": "#D6CCA3"
+            },
+            {
+              "name": "Ochre Yellow",
+              "hex": "#C98935"
+            }
+          ]
+        },
+        {
+          "id": "pla-metal",
+          "family": "PLA",
+          "name": "PLA Metal",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Iridium Gold Metallic",
+              "hex": "#B39B84"
+            },
+            {
+              "name": "Copper Brown Metallic",
+              "hex": "#AA6443"
+            },
+            {
+              "name": "Oxide Green Metallic",
+              "hex": "#1D7C6A"
+            },
+            {
+              "name": "Cobalt Blue Metallic",
+              "hex": "#39699E"
+            },
+            {
+              "name": "Iron Gray Metallic",
+              "hex": "#43403D"
+            }
+          ]
+        },
+        {
+          "id": "petg-hf",
+          "family": "PETG",
+          "name": "PETG HF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#FFFFFF",
+              "code": "33100"
+            },
+            {
+              "name": "Gray",
+              "hex": "#ADB1B2",
+              "code": "33101"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000",
+              "code": "33102"
+            },
+            {
+              "name": "Dark Gray",
+              "hex": "#515151",
+              "code": "33103"
+            },
+            {
+              "name": "Red",
+              "hex": "#EB3A3A",
+              "code": "33200"
+            },
+            {
+              "name": "Orange",
+              "hex": "#F75403",
+              "code": "33300"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#FFD00B",
+              "code": "33400"
+            },
+            {
+              "name": "Cream",
+              "hex": "#F9DFB9",
+              "code": "33401"
+            },
+            {
+              "name": "Green",
+              "hex": "#00AE42",
+              "code": "33500"
+            },
+            {
+              "name": "Lime Green",
+              "hex": "#6EE53C",
+              "code": "33501"
+            },
+            {
+              "name": "Forest Green",
+              "hex": "#39541A",
+              "code": "33502"
+            },
+            {
+              "name": "Blue",
+              "hex": "#002E96",
+              "code": "33600"
+            },
+            {
+              "name": "Lake Blue",
+              "hex": "#1F79E5",
+              "code": "33601"
+            },
+            {
+              "name": "Peanut Brown",
+              "hex": "#875718",
+              "code": "33801"
+            }
+          ]
+        },
+        {
+          "id": "petg-translucent",
+          "family": "PETG",
+          "name": "PETG Translucent",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Translucent Gray",
+              "hex": "#8E8E8E"
+            },
+            {
+              "name": "Translucent Light Blue",
+              "hex": "#61B0FF"
+            },
+            {
+              "name": "Translucent Olive",
+              "hex": "#748C45"
+            },
+            {
+              "name": "Translucent Brown",
+              "hex": "#C9A381"
+            },
+            {
+              "name": "Translucent Teal",
+              "hex": "#77EDD7"
+            },
+            {
+              "name": "Translucent Orange",
+              "hex": "#FF911A"
+            },
+            {
+              "name": "Translucent Purple",
+              "hex": "#D6ABFF"
+            },
+            {
+              "name": "Translucent Pink",
+              "hex": "#F9C1BD"
+            }
+          ]
+        },
+        {
+          "id": "petg-cf",
+          "family": "PETG",
+          "name": "PETG-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Brick Red",
+              "hex": "#9F332A"
+            },
+            {
+              "name": "Violet Purple",
+              "hex": "#583061"
+            },
+            {
+              "name": "Indigo Blue",
+              "hex": "#324585"
+            },
+            {
+              "name": "Malachite Green",
+              "hex": "#16B08E"
+            },
+            {
+              "name": "Titan Gray",
+              "hex": "#565656"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            },
+            {
+              "name": "Desert Tan",
+              "hex": "#E8DBB7"
+            },
+            {
+              "name": "Olive",
+              "hex": "#789D4A"
+            },
+            {
+              "name": "Azure",
+              "hex": "#489FDF"
+            },
+            {
+              "name": "Navy Blue",
+              "hex": "#0C2340"
+            },
+            {
+              "name": "Blue",
+              "hex": "#0A2CA5"
+            },
+            {
+              "name": "Tangerine Yellow",
+              "hex": "#FFC72C"
+            },
+            {
+              "name": "Orange",
+              "hex": "#FF6A13"
+            },
+            {
+              "name": "Red",
+              "hex": "#D32941"
+            },
+            {
+              "name": "Purple",
+              "hex": "#AF1685"
+            },
+            {
+              "name": "Silver",
+              "hex": "#87909A"
+            },
+            {
+              "name": "Bambu Green",
+              "hex": "#00AE42"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#FFFAF2"
+            },
+            {
+              "name": "Gray",
+              "hex": "#8A949E"
+            },
+            {
+              "name": "Red",
+              "hex": "#E02928"
+            },
+            {
+              "name": "Green",
+              "hex": "#00A6A0"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2140B4"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "tpu-95a-hf",
+          "family": "TPU",
+          "name": "TPU 95A HF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101820",
+              "code": "51100"
+            },
+            {
+              "name": "Gray",
+              "hex": "#898D8D",
+              "code": "51101"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF",
+              "code": "51102"
+            },
+            {
+              "name": "Red",
+              "hex": "#C8102E",
+              "code": "51200"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F3E600",
+              "code": "51400"
+            },
+            {
+              "name": "Blue",
+              "hex": "#0072CE",
+              "code": "51600"
+            }
+          ]
+        },
+        {
+          "id": "tpu-for-ams",
+          "family": "TPU",
+          "name": "TPU for AMS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Red",
+              "hex": "#ED0000"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F9EF41"
+            },
+            {
+              "name": "Blue",
+              "hex": "#5898DD"
+            },
+            {
+              "name": "Neon Green",
+              "hex": "#90FF1A"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            },
+            {
+              "name": "Gray",
+              "hex": "#939393"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "pa6-gf",
+          "family": "Nylon",
+          "name": "PA6-GF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#EAEAE4"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#FFCE00"
+            },
+            {
+              "name": "Lime",
+              "hex": "#C5ED48"
+            },
+            {
+              "name": "Blue",
+              "hex": "#75AED8"
+            },
+            {
+              "name": "Orange",
+              "hex": "#FF4800"
+            },
+            {
+              "name": "Brown",
+              "hex": "#5B492F"
+            },
+            {
+              "name": "Gray",
+              "hex": "#353533"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "pa6-cf",
+          "family": "Nylon",
+          "name": "PA6-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#171717"
+            }
+          ]
+        },
+        {
+          "id": "paht-cf",
+          "family": "Nylon",
+          "name": "PAHT-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#171717"
+            }
+          ]
+        },
+        {
+          "id": "pet-cf",
+          "family": "PET",
+          "name": "PET-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#171717"
+            }
+          ]
+        },
+        {
+          "id": "pc",
+          "family": "PC",
+          "name": "PC",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Clear/Neutral",
+              "hex": "#E2E5E3"
+            },
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        },
+        {
+          "id": "pva",
+          "family": "Support",
+          "name": "PVA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Clear",
+              "hex": "#F0F1A8"
+            }
+          ]
+        },
+        {
+          "id": "support-pla-petg",
+          "family": "Support",
+          "name": "Support for PLA/PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Nature",
+              "hex": "#D8D0B7"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "snapmaker",
       "name": "Snapmaker",
       "products": [
-        {"id":"snapspeed-pla","family":"PLA","name":"SnapSpeed PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Gray","hex":"#777777"},{"name":"Red","hex":"#C62828"}]}
+        {
+          "id": "snapspeed-pla",
+          "family": "PLA",
+          "name": "SnapSpeed PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prusa",
+      "name": "Prusament",
+      "products": [
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "Prusament PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-blend",
+          "family": "PLA",
+          "name": "Prusament PLA Blend",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "Prusament PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "Prusament ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pc-blend",
+          "family": "PC",
+          "name": "Prusament PC Blend",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pa11-cf",
+          "family": "Nylon",
+          "name": "Prusament PA11 Carbon Fiber",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#161616"
+            }
+          ]
+        },
+        {
+          "id": "tpu-95a",
+          "family": "TPU",
+          "name": "Prusament TPU 95A",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "polymaker",
       "name": "Polymaker",
       "products": [
-        {"id":"polylite-pla","family":"PLA","name":"PolyLite PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Gray","hex":"#777777"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"}]},
-        {"id":"polyterra-pla","family":"PLA","name":"PolyTerra PLA","spoolSizes":[1000],"colors":[{"name":"Charcoal Black","hex":"#2B2B2B"},{"name":"Cotton White","hex":"#F1EEE8"},{"name":"Sapphire Blue","hex":"#315B8A"},{"name":"Army Red","hex":"#8D3A3A"}]}
+        {
+          "id": "polylite-pla",
+          "family": "PLA",
+          "name": "PolyLite PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "polyterra-pla",
+          "family": "PLA",
+          "name": "PolyTerra PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "polylite-pla-pro",
+          "family": "PLA",
+          "name": "PolyLite PLA Pro",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "polylite-petg",
+          "family": "PETG",
+          "name": "PolyLite PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "polylite-asa",
+          "family": "ASA",
+          "name": "PolyLite ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "polylite-abs",
+          "family": "ABS",
+          "name": "PolyLite ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "polyflex-tpu95",
+          "family": "TPU",
+          "name": "PolyFlex TPU95",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pa6-cf",
+          "family": "Nylon",
+          "name": "Fiberon PA6-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "esun",
       "name": "eSUN",
       "products": [
-        {"id":"pla-plus","family":"PLA","name":"PLA+","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"Cold White","hex":"#F7F7F7"},{"name":"Fire Engine Red","hex":"#B52222"},{"name":"Peak Green","hex":"#2F7B55"},{"name":"Blue","hex":"#1B5F9E"}]},
-        {"id":"epla-matte","family":"PLA","name":"ePLA-Matte","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#202020"},{"name":"Milky White","hex":"#EFECE4"},{"name":"Deep Blue","hex":"#36587B"}]}
+        {
+          "id": "pla-plus",
+          "family": "PLA",
+          "name": "PLA+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "epla-matte",
+          "family": "PLA",
+          "name": "ePLA-Matte",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "epla-hs",
+          "family": "PLA",
+          "name": "ePLA-HS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg-hs",
+          "family": "PETG",
+          "name": "ePETG+HS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs-plus",
+          "family": "ABS",
+          "name": "ABS+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "eASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu-95a",
+          "family": "TPU",
+          "name": "eTPU-95A",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pa-cf",
+          "family": "Nylon",
+          "name": "ePA-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "sunlu",
       "name": "SUNLU",
       "products": [
-        {"id":"pla","family":"PLA","name":"PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Red","hex":"#C62828"},{"name":"Blue","hex":"#1565C0"}]},
-        {"id":"petg","family":"PETG","name":"PETG","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Transparent","hex":"#D9E3E8"},{"name":"Gray","hex":"#777777"}]}
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-plus",
+          "family": "PLA",
+          "name": "PLA+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-matte",
+          "family": "PLA",
+          "name": "PLA Matte",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "high-speed-pla",
+          "family": "PLA",
+          "name": "High Speed PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "high-speed-petg",
+          "family": "PETG",
+          "name": "High Speed PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "overture",
       "name": "Overture",
       "products": [
-        {"id":"pla","family":"PLA","name":"PLA","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Space Gray","hex":"#666B70"},{"name":"Digital Blue","hex":"#2067A8"}]},
-        {"id":"petg","family":"PETG","name":"PETG","spoolSizes":[1000],"colors":[{"name":"Black","hex":"#111111"},{"name":"White","hex":"#F5F5F5"},{"name":"Transparent","hex":"#DDE8EC"},{"name":"Red","hex":"#B92F2F"}]}
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-plus",
+          "family": "PLA",
+          "name": "PLA Professional",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "matte-pla",
+          "family": "PLA",
+          "name": "Matte PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "easy-nylon",
+          "family": "Nylon",
+          "name": "Easy Nylon",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hatchbox",
+      "name": "HATCHBOX",
+      "products": [
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-pro-plus",
+          "family": "PLA",
+          "name": "PLA PRO+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "wood",
+          "family": "PLA",
+          "name": "Wood PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Wood",
+              "hex": "#B5895A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creality",
+      "name": "Creality",
+      "products": [
+        {
+          "id": "hyper-pla",
+          "family": "PLA",
+          "name": "Hyper PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "hyper-pla-cf",
+          "family": "PLA",
+          "name": "Hyper PLA-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        },
+        {
+          "id": "cr-pla",
+          "family": "PLA",
+          "name": "CR-PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "hyper-petg",
+          "family": "PETG",
+          "name": "Hyper PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "cr-abs",
+          "family": "ABS",
+          "name": "CR-ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "cr-tpu",
+          "family": "TPU",
+          "name": "CR-TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anycubic",
+      "name": "Anycubic",
+      "products": [
+        {
+          "id": "high-speed-pla",
+          "family": "PLA",
+          "name": "High Speed PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-basic",
+          "family": "PLA",
+          "name": "PLA Basic",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-matte",
+          "family": "PLA",
+          "name": "PLA Matte",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "petg",
+          "family": "PETG",
+          "name": "PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs",
+          "family": "ABS",
+          "name": "ABS",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elegoo",
+      "name": "ELEGOO",
+      "products": [
+        {
+          "id": "rapid-pla-plus",
+          "family": "PLA",
+          "name": "Rapid PLA+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla",
+          "family": "PLA",
+          "name": "PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "matte-pla",
+          "family": "PLA",
+          "name": "Matte PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#202020"
+            },
+            {
+              "name": "White",
+              "hex": "#EEECE7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#858585"
+            },
+            {
+              "name": "Red",
+              "hex": "#A84646"
+            },
+            {
+              "name": "Blue",
+              "hex": "#416781"
+            },
+            {
+              "name": "Green",
+              "hex": "#5B7456"
+            }
+          ]
+        },
+        {
+          "id": "rapid-petg",
+          "family": "PETG",
+          "name": "Rapid PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs-like-filament",
+          "family": "ABS",
+          "name": "ABS-like Filament",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flashforge",
+      "name": "FlashForge",
+      "products": [
+        {
+          "id": "hs-pla",
+          "family": "PLA",
+          "name": "HS PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-silk-plus",
+          "family": "PLA",
+          "name": "PLA Silk+",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "hs-pla-multicolor",
+          "family": "PLA",
+          "name": "HS PLA Multicolor",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "hs-petg",
+          "family": "PETG",
+          "name": "HS PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "asa",
+          "family": "ASA",
+          "name": "ASA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qidi",
+      "name": "QIDI Tech",
+      "products": [
+        {
+          "id": "rapido-pla",
+          "family": "PLA",
+          "name": "QIDI Rapido PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pla-cf",
+          "family": "PLA",
+          "name": "QIDI PLA-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        },
+        {
+          "id": "petg-tough",
+          "family": "PETG",
+          "name": "QIDI PETG-Tough",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "abs-gf",
+          "family": "ABS",
+          "name": "QIDI ABS-GF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pa12-cf",
+          "family": "Nylon",
+          "name": "QIDI PA12-CF",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        },
+        {
+          "id": "tpu",
+          "family": "TPU",
+          "name": "QIDI TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matterhackers",
+      "name": "MatterHackers",
+      "products": [
+        {
+          "id": "build-pla",
+          "family": "PLA",
+          "name": "Build Series PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "pro-pla",
+          "family": "PLA",
+          "name": "PRO Series PLA",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "build-petg",
+          "family": "PETG",
+          "name": "Build Series PETG",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        },
+        {
+          "id": "nylonx",
+          "family": "Nylon",
+          "name": "NylonX",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#111111"
+            }
+          ]
+        },
+        {
+          "id": "pro-tpu",
+          "family": "TPU",
+          "name": "PRO Series TPU",
+          "spoolSizes": [
+            1000
+          ],
+          "colors": [
+            {
+              "name": "Black",
+              "hex": "#101010"
+            },
+            {
+              "name": "White",
+              "hex": "#F7F7F7"
+            },
+            {
+              "name": "Gray",
+              "hex": "#777777"
+            },
+            {
+              "name": "Red",
+              "hex": "#C92D2D"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2364A3"
+            },
+            {
+              "name": "Green",
+              "hex": "#39824B"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#F2CF3A"
+            },
+            {
+              "name": "Orange",
+              "hex": "#EF7A2F"
+            }
+          ]
+        }
       ]
     }
   ]
